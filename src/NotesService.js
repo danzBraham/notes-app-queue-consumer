@@ -13,7 +13,7 @@ class NotesService {
             GROUP BY notes.id`,
       values: [userId],
     };
-    const result = this._pool.query(query);
+    const result = await this._pool.query(query);
     return result.rows;
   }
 }
